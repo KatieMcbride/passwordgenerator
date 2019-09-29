@@ -1,23 +1,27 @@
 var pw = '';
 var letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var characters = ['!','@','#','$','%','&','*','~','_'];
+var digits = ['1','2','3','4','5','6','7','8','9'];
 var pwLen = prompt('How long do you want your password?');
 var pwCharacter = confirm('Do you want special characters?');
-//var pwNumber = confirm('Do you want numbers in your password?');
+var pwNumber = confirm('Do you want numbers in your password?');
 var pwCharacterLocation = Math.floor(Math.random() * characters.length) ;
+var pwNumberLocation = Math.floor(Math.random() * digits.length);
 
 
 
 function showNewPassword(){
     for (var i=0; i < pwLen; i++){
-        var number = Math.floor(Math.random() * letter.length);
+        var letNumber = Math.floor(Math.random() * letter.length);
         var cNumber = Math.floor(Math.random() * characters.length);
-        console.log(pwCharacterLocation);
+        var passNumber = Math.floor(Math.random() * digits.length);
         if (i === pwCharacterLocation && pwCharacter){
             pw = pw + characters[cNumber];
-        } else {
-            pw = pw + letter[number];
-        }
+        } if (i === pwNumberLocation && pwNumber){
+            pw = pw + digits[passNumber];
+        } else if (
+            pw = pw + letter[letNumber]
+        );
 
 
     }
