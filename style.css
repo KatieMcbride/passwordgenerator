@@ -1,0 +1,89 @@
+.bc{
+    background-color:#f1f0ee;
+}
+
+.H-bc{
+    background-color: whitesmoke;
+}
+
+.H-f{
+    font-family: 'Raleway', sans-serif;
+}
+
+.H-f-s{
+    font-size: 30px;
+}
+
+.H-p{
+    padding: 10px;
+}
+
+.H-t-a{
+    text-align: center;
+}
+
+.box-bc{
+    background-color: azure;
+}
+
+.box-b{
+    border: 2px;
+}
+
+.box-b-c{
+    border-color: blue;
+}
+
+.box-m{
+    margin: 10px;
+}
+
+.box-p{
+    padding: 10px;
+}
+
+.box-w{
+    width: 100px:
+}
+
+.box{
+  background-color: #DFDCE3;
+  width: 50%;
+  border: 5px black; 
+  padding: 50px;
+  margin: auto;
+  margin-top: 100px;
+  display: block;
+  justify-content: center;
+}
+
+.top-header{
+    font-family: 'Raleway', sans-serif;
+    Color: #e0474c ;
+    text-align: center;
+    font-size: 3em;
+
+}
+
+.new-pass{
+    font-size: 2em;
+    font: bold;
+    text-align: center;
+
+}
+
+.button-1{
+    font-size: 1.5em;
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    margin-right: 100px;
+    margin-left: 80px;
+}
+
+.button-2{
+    font-size: 1.5em;
+    text-align: right;
+    font-family: 'Raleway', sans-serif;
+    margin-left: 100px;
+    margin-right: 80px;
+}
