@@ -34,8 +34,24 @@ function showNewPassword(){
     pwBox.innerHTML = pw;
 };
 
-
 genBtn.addEventListener('click', showNewPassword);
+
+function copy() {
+    var range = document.createRange();
+        range.selectNode(document.getElementById("pwBox"));
+        window.getSelection().removeAllRanges(); // clear current selection
+        window.getSelection().addRange(range); // to select text
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();// to deselect
+  }
+
+
+
+
+
+  
+  document.querySelector("#copy").addEventListener("click", copy);
+
 
 
 
