@@ -3,7 +3,9 @@ var letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q
 var upperLetter = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var characters = ['!','@','#','$','%','&','*','~','_'];
 var digits = ['1','2','3','4','5','6','7','8','9'];
+// var pwLen = document.querySelector("#numOutput")
 var pwLen = prompt('How long do you want your password?');
+// var pwCharacter = document.getElementById("checked");
 var pwCharacter = confirm('Do you want special characters?');
 var pwNumber = confirm('Do you want numbers in your password?');
 var pwUpperCase = confirm('Do you want upper case letters?');
@@ -36,6 +38,8 @@ function showNewPassword(){
 
 genBtn.addEventListener('click', showNewPassword);
 
+// COPY FUNCTION 
+
 function copy() {
     var range = document.createRange();
         range.selectNode(document.getElementById("pwBox"));
@@ -45,8 +49,30 @@ function copy() {
         window.getSelection().removeAllRanges();// to deselect
   }
 
-  
   document.querySelector("#copy").addEventListener("click", copy);
+
+
+
+// REFRESH PAGE FUNCTION
+
+function refreshPage(){
+    window.location.reload();
+};
+
+
+
+//   SLIDER FUNCTION
+
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("numOutput");
+  
+    output.innerHTML = slider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+    output.innerHTML = this.value;
+    }
+
 
 
 
