@@ -195,7 +195,7 @@ label {
     background-color: #ccc;
   }
   
-  /* When the radio button is checked, add a blue background */
+  /* When the radio button is checked, add a red background */
   .container input:checked ~ .checkmark {
     background-color: #e0474c;
   }
