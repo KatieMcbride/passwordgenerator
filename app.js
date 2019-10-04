@@ -23,7 +23,7 @@ function showNewPassword(){
             pw = pw + characters[cNumber];
         } if (i === pwNumberLocation && pwNumber){
             pw = pw + digits[passNumber];
-        } if (i === pwUpperLetterLocation && pwUpperCase){
+        } else if (i === pwUpperLetterLocation && pwUpperCase){
             pw = pw + upperLetter[upperLetterNumber];
         } else if (
             pw = pw + letter[letNumber]
@@ -44,10 +44,6 @@ function copy() {
         document.execCommand("copy");
         window.getSelection().removeAllRanges();// to deselect
   }
-
-
-
-
 
   
   document.querySelector("#copy").addEventListener("click", copy);
