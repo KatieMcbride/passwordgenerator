@@ -3,30 +3,30 @@ var letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q
 var upperLetter = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var characters = ['!','@','#','$','%','&','*','~','_'];
 var digits = ['1','2','3','4','5','6','7','8','9'];
-// var pwLen = console.log(numOutput);
-var pwLen = prompt('How long do you want your password?');
-// var pwCharacter = document.getElementById("checked");
-var pwCharacter = confirm('Do you want special characters?');
-var pwNumber = confirm('Do you want numbers in your password?');
-var pwUpperCase = confirm('Do you want upper case letters?');
+var pwLen = 12
+var pwCharacter = document.getElementById("char");
+var pwNumber = document.getElementById("num");
+var pwUpperCase = document.getElementById("upper");
 var pwCharacterLocation = Math.floor(Math.random() * characters.length) ;
 var pwNumberLocation = Math.floor(Math.random() * digits.length);
 var pwUpperLetterLocation = Math.floor(Math.random() * upperLetter.length);
-// var numBox = document.querySelector("#num");
-
+var pwNumberCheckboxValue = true;
+var pwUpperCaseCheckboxValue = true;
+var pwCharacterCheckboxValue = true;
 
 
 function showNewPassword(){
+    console.log(pwNumber.value);
     for (var i=0; i < pwLen; i++){
         var letNumber = Math.floor(Math.random() * letter.length);
         var cNumber = Math.floor(Math.random() * characters.length);
         var passNumber = Math.floor(Math.random() * digits.length);
         var upperLetterNumber = Math.floor(Math.random() * upperLetter.length);
-        if (i === pwCharacterLocation && pwCharacter){
+        if (i === pwCharacterLocation && pwCharacterCheckboxValue){
             pw = pw + characters[cNumber];
-        } if (i === pwNumberLocation && pwNumber){
+        } if (i === pwNumberLocation && pwNumberCheckboxValue){
             pw = pw + digits[passNumber];
-        } else if (i === pwUpperLetterLocation && pwUpperCase){
+        } else if (i === pwUpperLetterLocation && pwUpperCaseCheckboxValue){
             pw = pw + upperLetter[upperLetterNumber];
         } else if (
             pw = pw + letter[letNumber]
@@ -36,6 +36,22 @@ function showNewPassword(){
     }
     pwBox.innerHTML = pw;
 };
+
+pwNumber.addEventListener("click", function(event) {
+    pwNumberCheckboxValue = !!event.target.checked;
+    console.log(pwNumberCheckboxValue)
+})
+
+pwUpperCase.addEventListener("click", function(event) {
+    pwUpperCaseCheckboxValue = !!event.target.checked;
+    console.log(pwUpperCaseCheckboxValue)
+})
+
+pwCharacter.addEventListener("click", function(event) {
+    pwCharacterCheckboxValue = !!event.target.checked;
+    console.log(pwCharacterCheckboxValue)
+})
+
 
 genBtn.addEventListener('click', showNewPassword);
 
@@ -60,8 +76,6 @@ function refreshPage(){
     window.location.reload();
 };
 
-
-
 //   SLIDER FUNCTION
 
   var slider = document.getElementById("myRange");
@@ -69,11 +83,13 @@ function refreshPage(){
 //   var pwLen = console.log(slider.oninput);
   
     output.innerHTML = slider.value; // Display the default slider value
+    
 
     // Update the current slider value (each time you drag the slider handle)
     slider.oninput = function passLength() {
     output.innerHTML = this.value;
-    var passwordLength = console.log(this.value);
+    pwLen = this.value;
+    
     };
 
 
