@@ -3,7 +3,7 @@ var letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q
 var upperLetter = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var characters = ['!','@','#','$','%','&','*','~','_'];
 var digits = ['1','2','3','4','5','6','7','8','9'];
-// var pwLen = document.querySelector("#numOutput")
+// var pwLen = console.log(numOutput);
 var pwLen = prompt('How long do you want your password?');
 // var pwCharacter = document.getElementById("checked");
 var pwCharacter = confirm('Do you want special characters?');
@@ -12,6 +12,7 @@ var pwUpperCase = confirm('Do you want upper case letters?');
 var pwCharacterLocation = Math.floor(Math.random() * characters.length) ;
 var pwNumberLocation = Math.floor(Math.random() * digits.length);
 var pwUpperLetterLocation = Math.floor(Math.random() * upperLetter.length);
+var numBox = document.querySelector("#num");
 
 
 
@@ -65,16 +66,18 @@ function refreshPage(){
 
   var slider = document.getElementById("myRange");
   var output = document.getElementById("numOutput");
+//   var pwLen = console.log(slider.oninput);
   
     output.innerHTML = slider.value; // Display the default slider value
 
     // Update the current slider value (each time you drag the slider handle)
-    slider.oninput = function() {
+    slider.oninput = function passLength() {
     output.innerHTML = this.value;
-    }
+    var passwordLength = console.log(this.value);
+    };
 
 
-
+ 
 
 
 
