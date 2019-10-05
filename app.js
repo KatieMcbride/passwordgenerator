@@ -12,7 +12,7 @@ var pwUpperCase = confirm('Do you want upper case letters?');
 var pwCharacterLocation = Math.floor(Math.random() * characters.length) ;
 var pwNumberLocation = Math.floor(Math.random() * digits.length);
 var pwUpperLetterLocation = Math.floor(Math.random() * upperLetter.length);
-var numBox = document.querySelector("#num");
+// var numBox = document.querySelector("#num");
 
 
 
